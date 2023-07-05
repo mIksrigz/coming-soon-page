@@ -2,6 +2,7 @@
   --desaturated-red: hsl(0, 36%, 70%);
   --desaturated-red-hsl: 0, 36%, 70%;
   --soft-red: hsl(0, 93%, 68%);
+  --error-border-clr: hsl(0, 93%, 63%);
   --dark-grayish-red: hsl(0, 6%, 24%);
   --very-light-gradient: linear-gradient(135deg, hsl(0, 0%, 100%), 0, 100%, 98%);
   --soft-gradient: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
@@ -43,7 +44,7 @@ main {
   margin: 0 auto;
 }
 
-.desktop-background-img{
+.desktop-background-img {
   display: none;
 }
 
@@ -90,6 +91,7 @@ main {
   border: 1px solid hsl(var(--desaturated-red-hsl), 0.6);
   border-radius: 5em;
 }
+
 .email:focus {
   outline: 1px solid var(--desaturated-red);
 }
@@ -111,14 +113,8 @@ main {
   background: var(--soft-gradient);
   transition: 250ms ease-out;
 }
-.button:hover{
-  background: var(--hover-gradient);
-  width: 5rem;
-  height: 3rem;
-  top: -0.125rem;
-  right: -0.5rem
-}
-.button-hover{
+
+.button:hover {
   background: var(--hover-gradient);
   width: 5rem;
   height: 3rem;
@@ -126,15 +122,23 @@ main {
   right: -0.5rem
 }
 
-.arrow{
+.button-hover {
+  background: var(--hover-gradient);
+  width: 5rem;
+  height: 3rem;
+  top: -0.125rem;
+  right: -0.5rem
+}
+
+.arrow {
   cursor: pointer;
   position: absolute;
   top: 13px;
   right: 24px;
 }
 
-@media(width > 1439px){
-  main{
+@media(width > 1439px) {
+  main {
     display: grid;
     grid-template-columns: 1fr 700px 610px;
     grid-template-rows: 175px 300px 300px;
@@ -172,13 +176,13 @@ main {
     position: relative;
     margin-bottom: 1.25em;
   }
-  
+
   .email {
     padding-left: 2em;
     width: 69%;
     height: 3rem;
   }
-  
+
   .button {
     top: 0;
     left: 57%;
@@ -188,29 +192,31 @@ main {
     background: var(--soft-gradient);
     transition: 250ms ease-out;
   }
-  .button:hover{
+
+  .button:hover {
     background: var(--hover-gradient);
     width: 5.5rem;
-    height: 3.25rem;
-    top: -0.125rem;
-    left: 56%;
+    height: 3.5rem;
+    top: -0.25rem;
+    left: 56.5%;
   }
-  .button-hover{
+
+  .button-hover {
     background: var(--hover-gradient);
     width: 5.5rem;
-    height: 3.25rem;
-    top: -0.125rem;
-    left: 56%;
+    height: 3.5rem;
+    top: -0.25rem;
+    left: 56.5%;
   }
-  
-  .arrow{
+
+  .arrow {
     cursor: pointer;
     position: absolute;
     top: 13px;
     left: 63%;
   }
 
-  .desktop-background-img{
+  .desktop-background-img {
     display: block;
     grid-column: 3 / 4;
     grid-row: 1 / -1;
@@ -219,7 +225,59 @@ main {
     height: 100%;
   }
 
-  .mobile-background-img{
+  .mobile-background-img {
     display: none;
   }
+}
+
+/*mail validation styles*/
+
+.email[data-wrong="true"] {
+  border: 2px solid red;
+}
+
+.error-icon[data-visible="true"] {
+  position: absolute;
+  top: 34%;
+  right: 25%;
+  transform: translateY(-50%);
+}
+
+@media(width > 1439px) {
+  .error-icon[data-visible="true"] {
+    right: 45%;
+  }
+}
+
+.error-icon[data-visible="false"] {
+  display: none;
+}
+
+.not-valid-message[data-visible="false"] {
+  display: none;
+}
+
+.not-valid-message[data-visible="true"] {
+  text-align: left;
+  font-weight: var(--semi-bold-fw);
+  color: var(--not-valid-message-clr);
+  font-size: 0.8125rem;
+  margin-top: 0.5em;
+  margin-left: 1.5em;
+}
+
+.red-border {
+  border-color: var(--error-border-clr);
+}
+
+footer {
+  color: var(--dark-grayish-red);
+  margin-top: 4em;
+}
+footer a{
+ color: inherit;
+ transition: opacity 250ms ease-out;
+}
+footer a:hover{
+ opacity: 0.7;
 }
