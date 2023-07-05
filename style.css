@@ -40,7 +40,7 @@ body {
 }
 
 main {
-  max-width: 375px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -53,7 +53,17 @@ main {
   padding: 2em 1.5em;
 }
 
+.mobile-background-img {
+  object-fit: cover;
+  object-position: 50% 20%;
+  border: 1px solid red;
+  width: 100%;
+  max-height: 300px;
+}
+
 .content-area {
+  max-width: 450px;
+  margin-inline: auto;
   margin-top: 3.25em;
   padding: 0 2em;
 }
@@ -80,6 +90,7 @@ main {
 .form {
   position: relative;
   margin-bottom: 1.25em;
+  margin: 0 auto;
 }
 
 .email {
@@ -138,6 +149,50 @@ main {
   right: 24px;
 }
 
+@media(width > 999px) {
+  main{
+    display: grid;
+    max-width: 1200px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+  }
+
+  .desktop-background-img {
+    display: block;
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+  }
+
+  .logo{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width: 200px;
+    align-self: center;
+    margin-left: 2em;
+  }
+
+  .content-area{
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    place-content: center;
+    text-align: left;
+  }
+
+  .tittle {
+    font-size: 3.25rem;
+    margin-bottom: 0.5em;
+  }
+  
+  .announcement {
+    font-size: 1rem;
+    margin-bottom: 3em;
+  }
+
+  .mobile-background-img {
+    display: none;
+  }
+}
+
 @media(width > 1439px) {
   main {
     display: grid;
@@ -150,14 +205,14 @@ main {
   .logo {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
-    align-self: center;
-    width: 200px;
+    margin-left: 0;
   }
 
   .content-area {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     text-align: left;
+    max-width: none;
     /* border: 2px solid blue; */
   }
 
@@ -176,6 +231,7 @@ main {
   .form {
     position: relative;
     margin-bottom: 1.25em;
+    max-width: none;
   }
 
   .email {
@@ -240,13 +296,14 @@ main {
 .error-icon[data-visible="true"] {
   position: absolute;
   top: 34%;
-  right: 25%;
-  transform: translateY(-50%);
+  left: 73%;
+  transform: translate(-50%, -50%);
+
 }
 
 @media(width > 1439px) {
   .error-icon[data-visible="true"] {
-    right: 45%;
+    left: 53%;
   }
 }
 
