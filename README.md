@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [live site](https://cominng-soon-page-ikrsrigz.netlify.app/)
+- Solution URL: [solution](https://your-solution-url.com)
+- Live Site URL: [live site](https://coming-soon-page-ikrsrigz.netlify.app/)
 
 
 ### Built with
