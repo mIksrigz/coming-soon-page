@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution](https://your-solution-url.com)
+- Solution URL: [solution](https://www.frontendmentor.io/solutions/comingsoonpage-l4DBL5eqQO)
 - Live Site URL: [live site](https://coming-soon-page-ikrsrigz.netlify.app/)
 
 
